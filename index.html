@@ -1,15 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>交易盾 - 安全下载</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shield APP下载</title>
+    <style>
+        /* 全局重置 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        
+        body {
+            background-color: #f5f7fa; /* 淡灰色背景，显得高级 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* 卡片容器 */
+        .container {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* 柔和的投影 */
+            text-align: center;
+        }
+
+        /* 标题区域 */
+        .logo-area { margin-bottom: 20px; }
+        .app-name { font-size: 24px; font-weight: 700; color: #1a1a1a; margin-bottom: 5px; }
+        .app-desc { font-size: 14px; color: #666; margin-bottom: 30px; }
+
+        /* 下载按钮样式 */
+        .btn-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: #0070f3; /* 科技蓝 */
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            transition: background 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 112, 243, 0.2);
+        }
+        
+        .btn-download:hover { background-color: #005bb5; }
+        .btn-download:active { transform: scale(0.98); }
+
+        /* 图标样式 */
+        .icon { width: 24px; height: 24px; margin-right: 10px; fill: currentColor; }
+
+        /* iOS 提示区域 */
+        .ios-notice {
+            background-color: #f9f9f9;
+            border: 1px dashed #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            color: #888;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ios-icon { width: 18px; height: 18px; margin-right: 8px; fill: #999; }
+
+        /* 版本号和页脚 */
+        .version-info { margin-top: 30px; font-size: 12px; color: #aaa; border-top: 1px solid #eee; padding-top: 15px;}
+    </style>
 </head>
-<body style="text-align: center; padding-top: 50px; font-family: sans-serif;">
-    <h1>交易盾 (Trading Shield)</h1>
-    <p>最新版本：v1.0.0</p>
-    
-    <a href="./ts.apk" style="background-color: #0070f3; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-size: 18px;">
-        点击下载最新版
-    </a>
+<body>
+
+    <div class="container">
+        <div class="logo-area">
+            <div class="app-name">T-Shield</div>
+            <div class="app-desc">专业的金融交易辅助工具</div>
+        </div>
+
+        <a href="./ts.apk?v=1.0.0" class="btn-download">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M17.523 15.3414C17.523 15.3414 17.523 15.3414 17.523 15.3414C17.523 15.3414 17.523 15.3414 17.523 15.3414C17.523 15.3414 17.523 15.3414 17.523 15.3414ZM6.47698 15.3414C6.47698 15.3414 6.47698 15.3414 6.47698 15.3414C6.47698 15.3414 6.47698 15.3414 6.47698 15.3414C6.47698 15.3414 6.47698 15.3414 6.47698 15.3414ZM4.53982 10.9928C4.53982 10.9928 4.53982 10.9928 4.53982 10.9928C4.53982 10.9928 4.53982 10.9928 4.53982 10.9928C4.53982 10.9928 4.53982 10.9928 4.53982 10.9928ZM19.4602 10.9928C19.4602 10.9928 19.4602 10.9928 19.4602 10.9928C19.4602 10.9928 19.4602 10.9928 19.4602 10.9928C19.4602 10.9928 19.4602 10.9928 19.4602 10.9928ZM22.0003 14.6366C22.0003 19.3366 18.0645 19.7226 18.0645 19.7226V23.0002H15.6565V19.9806C15.6565 19.9806 14.2818 20.129 11.9998 20.129C9.71777 20.129 8.34311 19.9806 8.34311 19.9806V23.0002H5.93512V19.7226C5.93512 19.7226 1.99933 19.3366 1.99933 14.6366C1.99933 11.6966 3.65527 9.53235 6.00842 8.52841C5.60254 7.55017 5.01166 6.55115 5.01166 6.55115L6.96576 6.55115C6.96576 6.55115 7.74713 7.77704 8.27191 8.38458C9.40149 8.11322 10.6622 7.95776 11.9998 7.95776C13.3374 7.95776 14.5982 8.11322 15.7277 8.38458C16.2525 7.77704 17.0338 6.55115 17.0338 6.55115L18.9879 6.55115C18.9879 6.55115 18.3971 7.55017 17.9912 8.52841C20.3444 9.53235 22.0003 11.6966 22.0003 14.6366Z" />
+            </svg>
+            下载 Android 客户端
+        </a>
+
+        <div class="ios-notice">
+            <svg class="ios-icon" viewBox="0 0 24 24">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.68-.83 1.14-1.99.94-3.14-1.02.05-2.29.69-3.01 1.54-.64.75-1.18 1.94-.95 3.06 1.13.08 2.33-.62 3.02-1.46z"/>
+            </svg>
+            iOS 版本正在加紧开发中，敬请期待
+        </div>
+
+        <div class="version-info">
+            <p>当前版本: v1.0.0 (Beta)</p>
+            <p style="margin-top:5px;">&copy; 2026 T-Shield Club. All Rights Reserved.</p>
+        </div>
+    </div>
+
 </body>
 </html>
